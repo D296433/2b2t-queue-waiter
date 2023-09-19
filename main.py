@@ -83,4 +83,6 @@ def end(*args):
 @On(bot, "error")
 def error(err, *args):
     print(f"Error: {err}")
-    notif(f"Error: {err}")
+    with open("log.txt", "w", encoding="UTF-8") as f:
+        f.write(str(err))
+    notif(f"Error!")
